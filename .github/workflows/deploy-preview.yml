@@ -3,7 +3,7 @@ name: deploy preview
 on:
   push:
     branches:
-      - dev
+      - main
   workflow_dispatch:
 
 env:
