@@ -31,12 +31,13 @@ jobs:
           pushd './'
           yarn install
           yarn build
+          yarn test
           popd
-      - name: Jest coverage report (frontend)
-        uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          package-manager: yarn
+      # - name: Jest coverage report (frontend)
+      #   uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.5
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     package-manager: yarn
 
   test-functions:
     runs-on: ubuntu-latest
@@ -56,10 +57,11 @@ jobs:
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
           yarn install
           yarn build
+          yarn test
           popd
-      - name: Jest coverage report (functions)
-        uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
-        with:
-          working-directory: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          package-manager: yarn
+      # - name: Jest coverage report (functions)
+      #   uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+      #   with:
+      #     working-directory: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     package-manager: yarn
