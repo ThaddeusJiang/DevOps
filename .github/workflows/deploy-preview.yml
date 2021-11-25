@@ -1,0 +1,53 @@
+name: deploy preview
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  VERCEL_ORG_ID: your_vercel_org_id
+  VERCEL_PROJECT_ID: your_vercel_project_id
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: "functions" # set this to the path to your web app project, defaults to the repository root
+  NODE_VERSION: "14.x" # set this to the node version to use (supports 8.x, 10.x, 12.x)
+
+jobs:
+  deploy-webapp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # Don't really deploy
+      # - name: deploy to vercel
+      #   uses: amondnet/vercel-action@v20
+      #   with:
+      #     vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+      #     github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+      #     vercel-args: "--prod --confirm" #Optional
+      #     vercel-org-id: ${{ env.VERCEL_ORG_ID}} #Required
+      #     vercel-project-id: ${{ env.VERCEL_PROJECT_ID }} #Required
+      #     working-directory: ./
+
+  deploy-functions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: "Resolve Project Dependencies Using Yarn"
+        shell: bash
+        run: |
+          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          yarn install
+          yarn build
+          popd
+
+      # Don't really deploy
+      # - name: deploy to azure - preview
+      #   uses: Azure/functions-action@v1
+      #   id: preview
+      #   with:
+      #     app-name: mojito-admin-preview
+      #     package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+      #     publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE_PREVIEW }}
