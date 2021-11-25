@@ -17,15 +17,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: deploy to vercel
-        uses: amondnet/vercel-action@v20
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
-          vercel-args: "--prod --confirm" #Optional
-          vercel-org-id: ${{ env.VERCEL_ORG_ID}} #Required
-          vercel-project-id: ${{ env.VERCEL_PROJECT_ID }} #Required
-          working-directory: ./
+      # Don't really deploy
+      # - name: deploy to vercel
+      #   uses: amondnet/vercel-action@v20
+      #   with:
+      #     vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+      #     github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+      #     vercel-args: "--prod --confirm" #Optional
+      #     vercel-org-id: ${{ env.VERCEL_ORG_ID}} #Required
+      #     vercel-project-id: ${{ env.VERCEL_PROJECT_ID }} #Required
+      #     working-directory: ./
 
   deploy-functions:
     runs-on: ubuntu-latest
@@ -42,10 +43,11 @@ jobs:
           yarn build
           popd
 
-      - name: deploy to azure - preview
-        uses: Azure/functions-action@v1
-        id: preview
-        with:
-          app-name: mojito-admin-preview
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE_PREVIEW }}
+      # Don't really deploy
+      # - name: deploy to azure - preview
+      #   uses: Azure/functions-action@v1
+      #   id: preview
+      #   with:
+      #     app-name: mojito-admin-preview
+      #     package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+      #     publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE_PREVIEW }}
