@@ -17,20 +17,20 @@
 
 ## Step1: Create Azure Cosmos DB and Function App
 
-1. setup `preview` environment, see [./infra/preview/main.tf](./infra/preview/main.tf)
+1. setup `test` environment, see [./infra/azure/test/main.tf](./infra/azure/test/main.tf)
 
 ```
-cd infra/preview
+cd infra/test
 terraform init
-terraform plan -out=preview
-terraform apply "preview"
+terraform plan -out=test
+terraform apply "test"
 ```
 
 2. setup `prod` environment with the same way
 
 ## Step2: Deploy Web App to Vercel and deploy to Azure
 
-1. deploy `preview` when merge PR into main branch and push commit to main branch, see [./.github/workflows/deploy-preview.yml](./.github/workflows/deploy-preview.yml)
+1. deploy `test` when merge PR into main branch and push commit to main branch, see [./.github/workflows/deploy-test.yml](./.github/workflows/deploy-test.yml)
 
 2. deploy `prod` when publish a release, see [./.github/workflows/deploy-prod.yml](./.github/workflows/deploy-prod.yml)
 

@@ -1,4 +1,4 @@
-name: deploy preview
+name: deploy test
 
 on:
   push:
@@ -44,10 +44,10 @@ jobs:
           popd
 
       # Don't really deploy
-      # - name: deploy to azure - preview
+      # - name: deploy to azure - test
       #   uses: Azure/functions-action@v1
-      #   id: preview
+      #   id: test
       #   with:
-      #     app-name: mojito-admin-preview
+      #     app-name: mojito-admin-test
       #     package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-      #     publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE_PREVIEW }}
+      #     publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE_TEST }}
