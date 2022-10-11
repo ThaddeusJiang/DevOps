@@ -1,0 +1,36 @@
+name: deploy test
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: "apps/azure-functions" # set this to the path to your web app project, defaults to the repository root
+  NODE_VERSION: "14.x" # set this to the node version to use (supports 8.x, 10.x, 12.x)
+
+jobs:
+  deploy-functions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: "Resolve Project Dependencies Using Yarn"
+        shell: bash
+        run: |
+          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          yarn install
+          yarn build
+          popd
+
+      # Don't really deploy
+      # - name: deploy to azure - test
+      #   uses: Azure/functions-action@v1
+      #   id: test
+      #   with:
+      #     app-name: mojito-admin-test
+      #     package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+      #     publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE_TEST }}

@@ -1,13 +1,14 @@
 {
-  "name": "functions",
-  "version": "1.0.0",
+  "name": "azure-functions",
+  "version": "0.0.1",
   "description": "",
+  "license": "GPL-3.0",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "prestart": "npm run build",
     "start": "func start",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {},
   "devDependencies": {
