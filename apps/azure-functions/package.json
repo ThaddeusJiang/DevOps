@@ -8,7 +8,7 @@
     "watch": "tsc -w",
     "prestart": "npm run build",
     "start": "func start",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {},
   "devDependencies": {

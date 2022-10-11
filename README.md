@@ -1,9 +1,9 @@
-# Mojito Admin
+# Mojito App Stater
 
-![GitHub](https://img.shields.io/github/license/thaddeusjiang/mojito-admin-starter?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/thaddeusjiang/mojito-app-starter?style=for-the-badge)
 [![Twitter: ThaddeusJiang](https://img.shields.io/twitter/follow/ThaddeusJiang.svg?style=social)](https://twitter.com/ThaddeusJiang)
 
-- [Mojito Admin](#mojito-admin)
+- [Mojito App Stater](#mojito-app-stater)
   - [Involved content](#involved-content)
   - [Step1: Create Azure Cosmos DB and Function App](#step1-create-azure-cosmos-db-and-function-app)
   - [Step2: Deploy Web App to Vercel and deploy to Azure](#step2-deploy-web-app-to-vercel-and-deploy-to-azure)
