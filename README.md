@@ -8,6 +8,7 @@
   - [Step1: Create Azure Cosmos DB and Function App](#step1-create-azure-cosmos-db-and-function-app)
   - [Step2: Deploy Web App to Vercel and deploy to Azure](#step2-deploy-web-app-to-vercel-and-deploy-to-azure)
   - [File Structure](#file-structure)
+- [repo-visualizer](#repo-visualizer)
 
 > 此项目主要为了演示如何自动化 Fullstack project 的 Infrastructure。
 
@@ -33,7 +34,7 @@ terraform apply "test"
 
 ## Step2: Deploy Web App to Vercel and deploy to Azure
 
-1. deploy `test` when merge PR into main branch and push commit to main branch, see [./.github/workflows/deploy-test.yml](./.github/workflows/deploy-test.yml)
+1. deploy `test` when merge PR into dev branch and push commit to dev branch, see [./.github/workflows/deploy-test.yml](./.github/workflows/deploy-test.yml)
 
 2. deploy `prod` when publish a release, see [./.github/workflows/deploy-prod.yml](./.github/workflows/deploy-prod.yml)
 
@@ -62,3 +63,9 @@ terraform apply "test"
 │   └── tsconfig
 └── turbo.json
 ```
+
+# repo-visualizer
+
+This diagram of using the [repo-visualizer](https://github.com/githubocto/repo-visualizer) GitHub Action.
+
+![Visualization of this repo](./diagram.svg)
