@@ -1,12 +1,15 @@
-# Mojito Admin Starter
+# Mojito Admin
 
-> 此项目主要为了演示如何自动化 Fullstack project 的 Infrastructure。
+![GitHub](https://img.shields.io/github/license/thaddeusjiang/mojito-admin-starter?style=for-the-badge)
+[![Twitter: ThaddeusJiang](https://img.shields.io/twitter/follow/ThaddeusJiang.svg?style=social)](https://twitter.com/ThaddeusJiang)
 
-- [Mojito Admin Starter](#mojito-admin-starter)
+- [Mojito Admin](#mojito-admin)
   - [Involved content](#involved-content)
   - [Step1: Create Azure Cosmos DB and Function App](#step1-create-azure-cosmos-db-and-function-app)
   - [Step2: Deploy Web App to Vercel and deploy to Azure](#step2-deploy-web-app-to-vercel-and-deploy-to-azure)
   - [File Structure](#file-structure)
+
+> 此项目主要为了演示如何自动化 Fullstack project 的 Infrastructure。
 
 ## Involved content
 
@@ -39,9 +42,23 @@ terraform apply "test"
 ```
 .
 ├── .github
-│   └── ... // CI/CD
+│   └── workflows
+├── .secrets.baseline       // Run Yelp's detect-secrets
+├── .vscode
+│   ├── extensions.json
+│   ├── launch.json         // debug and deploy
+│   ├── settings.json
+│   └── tasks.json
+├── LICENSE
+├── README.md
+├── apps
+│   ├── azure-functions     // api
+│   └── next-app            // web
 ├── infra
-│   └── ... // Infrastructure as Code
-├── ...
-│   └── ... // Others source code
+│   └── azure               // infra as code
+├── packages
+│   ├── eslint-config-custom
+│   ├── tailwind-config
+│   └── tsconfig
+└── turbo.json
 ```
