@@ -1,5 +1,11 @@
-/** @type {import('next').NextConfig} */
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { createSecureHeaders } = require("next-secure-headers");
+
 module.exports = {
-  reactStrictMode: true,
+  async headers() {
+    return [{ source: "/(.*)", headers: createSecureHeaders() }];
+  },
+  trailingSlash: true,
+  exportPathMap: () => ({ "/": { page: "/" } }),
   excludeFile: (str) => /functions\/**/.test(str),
 };
