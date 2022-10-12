@@ -6,7 +6,7 @@ export const read = (partition: string) => async (id: string) => {
   return data;
 };
 
-export const getTotalFromContentRange = (contentRange) => {
+export const getTotalFromContentRange = (contentRange = "items 0-0/0") => {
   const total = contentRange.split("/").pop();
   return parseInt(total, 10);
 };
