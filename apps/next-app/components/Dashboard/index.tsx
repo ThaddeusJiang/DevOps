@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { findCustomers } from "modules/customer/apis/customer";
 import { findTasks } from "modules/task/apis/task";
 import TaskLineChart from "modules/task/components/TaskLineChart";

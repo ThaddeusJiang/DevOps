@@ -16,6 +16,9 @@
     "dev": {
       "cache": false
     },
+    "start": {
+      "cache": false
+    },
     "clean": {
       "cache": false
     },

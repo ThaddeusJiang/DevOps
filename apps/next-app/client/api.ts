@@ -7,7 +7,7 @@ export const read = (partition: string) => async (id: string) => {
 };
 
 export const getTotalFromContentRange = (contentRange = "items 0-0/0") => {
-  const total = contentRange.split("/").pop();
+  const total = contentRange.split("/").pop() ?? "0";
   return parseInt(total, 10);
 };
 

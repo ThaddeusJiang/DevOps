@@ -1,4 +1,4 @@
-import { basicFeatures } from 'data/real'
+import { basicFeatures } from "../../data/real";
 
 const BasicFeatures = () => (
   <>
@@ -18,6 +18,6 @@ const BasicFeatures = () => (
       </div>
     ))}
   </>
-)
+);
 
-export default BasicFeatures
+export default BasicFeatures;
