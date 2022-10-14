@@ -8,6 +8,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "start": "turbo run start --parallel",
     "test": "turbo run test --parallel",
     "deploy": "turbo run deploy",
     "lint": "turbo run lint",
