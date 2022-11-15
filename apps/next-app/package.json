@@ -48,6 +48,7 @@
     "react-hot-toast": "^2.2.0",
     "react-query": "3.33.7",
     "react-table": "^7.7.0",
+    "recharts": "^2.1.15",
     "tippy.js": "^6.3.7",
     "uuid": "^8.3.2",
     "webpack": "5",

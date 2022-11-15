@@ -1,12 +1,8 @@
 import { rest } from "msw";
 
-import {
-  MockAuditLogs,
-  MockCustomers,
-  MockMansions,
-  MockTaskDefinitions,
-  MockTasks,
-} from "../data/mocks";
+import { MockTasks } from "data/mock/tasks";
+
+import { MockAuditLogs, MockCustomers, MockMansions, MockTaskDefinitions } from "../data/mocks";
 
 const handlers = [
   rest.get("/api/curd/Mansions", (req, res, ctx) => {

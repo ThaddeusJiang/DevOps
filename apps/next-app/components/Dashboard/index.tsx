@@ -2,6 +2,7 @@ import { findCustomers } from "modules/customer/apis/customer";
 import { findTasks } from "modules/task/apis/task";
 import TaskLineChart from "modules/task/components/TaskLineChart";
 import TaskStats from "modules/task/components/TaskStats";
+import TaskStatusBarChart from "modules/task/components/TaskStatusBarChart";
 
 import { FC } from "react";
 import { useQuery } from "react-query";
@@ -43,6 +44,7 @@ const Dashboard: FC = () => {
       filter: {
         "scheduledStartedAt >=": dayjs().startOf("day").subtract(30, "day").toISOString(),
         "scheduledStartedAt <": dayjs().endOf("day").toISOString(),
+        "state !=": "succeeded",
       },
       offset: 0,
       limit: 500,
@@ -69,13 +71,14 @@ const Dashboard: FC = () => {
           <section aria-labelledby="profile-overview-title">
             <div className="rounded-lg bg-white overflow-hidden shadow">
               <div className=" p-6 ">
-                <h3 className="text-lg leading-6 font-medium text-gray-900 mb-6">Task Line</h3>
+                <h3 className="text-lg leading-6 font-medium text-gray-900 mb-6">Today Tasks</h3>
                 <div className="h-80">
                   {/* {queryTasks.isLoading ? (
                     <Loading />
                   ) : (
                     <TaskLineChart items={queryTasks.data?.items} />
                   )} */}
+                  <TaskStatusBarChart items={queryTasks.data?.items} />
                 </div>
               </div>
             </div>
