@@ -1,16 +1,24 @@
-# Mojito App Stater
+# Mojito Admin
 
-![GitHub](https://img.shields.io/github/license/thaddeusjiang/mojito-app-starter?style=for-the-badge)
+> An admin app for SaaS companies that are using Microsoft Azure Cloud.
+
+![GitHub](https://img.shields.io/github/license/thaddeusjiang/mojito-admin?style=for-the-badge)
 [![Twitter: ThaddeusJiang](https://img.shields.io/twitter/follow/ThaddeusJiang.svg?style=social)](https://twitter.com/ThaddeusJiang)
 
-- [Mojito App Stater](#mojito-app-stater)
-  - [Involved content](#involved-content)
-  - [Step1: Create Azure Cosmos DB and Function App](#step1-create-azure-cosmos-db-and-function-app)
-  - [Step2: Deploy Web App to Vercel and deploy to Azure](#step2-deploy-web-app-to-vercel-and-deploy-to-azure)
-  - [File Structure](#file-structure)
-- [repo-visualizer](#repo-visualizer)
+## Features
 
-> 此项目主要为了演示如何自动化 Fullstack project 的 Infrastructure。
+- [x] Create services(trial account/real account) for customers
+- [x] Manage services
+- [x] Schedule and monitor cron jobs
+- [x] Domain Status
+- [ ] Download Audit logs
+
+![Dashboard](./docs/assets/Dashboard.png)
+
+## Options
+
+- [x] Operate Cloud Resources via Web App
+- [x] Operate Cloud Resources via Terraform
 
 ## Involved content
 
@@ -18,6 +26,7 @@
 2. Azure Functions
 3. Terraform
 4. GitHub Actions
+5. Datadog
 
 ## Step1: Create Azure Cosmos DB and Function App
 
@@ -53,7 +62,7 @@ terraform apply "test"
 ├── LICENSE
 ├── README.md
 ├── apps
-│   ├── azure-functions     // api
+│   ├── azure-functions     // functions
 │   └── next-app            // web
 ├── infra
 │   └── azure               // infra as code
@@ -64,7 +73,7 @@ terraform apply "test"
 └── turbo.json
 ```
 
-# repo-visualizer
+repo-visualizer
 
 This diagram of using the [repo-visualizer](https://github.com/githubocto/repo-visualizer) GitHub Action.
 

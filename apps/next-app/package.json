@@ -10,6 +10,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest",
+    "test:web": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "e2e-test": "yarn run playwright test --config=e2e/playwright.config.ts",

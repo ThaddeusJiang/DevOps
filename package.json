@@ -10,6 +10,7 @@
     "dev": "turbo run dev --parallel",
     "start": "turbo run start --parallel",
     "test": "turbo run test --parallel",
+    "test:web": "turbo run test:web",
     "deploy": "turbo run deploy",
     "lint": "turbo run lint",
     "clean": "turbo run clean",
