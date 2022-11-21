@@ -30,7 +30,7 @@ jobs:
           pushd './'
           yarn install
           yarn build
-          yarn test
+          yarn test:web
           popd
       # - name: Jest coverage report (frontend)
       #   uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.5
