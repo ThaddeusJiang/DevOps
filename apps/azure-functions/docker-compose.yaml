@@ -1,0 +1,11 @@
+services:
+  frontend:
+    image: mojitodev.azurecr.io/mojito-front
+    container_name: frontend
+    restart: always
+    ports:
+      - "80:80"
+  backend:
+    image: mojitodev.azurecr.io/framework
+    restart: always
+    container_name: backend

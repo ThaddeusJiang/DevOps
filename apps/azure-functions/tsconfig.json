@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
+    "typeRoots": ["node_modules/@types"],
     "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "target": "es6",
     "outDir": "dist",
     "rootDir": ".",

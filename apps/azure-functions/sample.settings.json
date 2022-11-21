@@ -1,0 +1,31 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AZURE_SUBSCRIPTION_ID": "ae903ce3-6221-48e0-a5a2-fake",
+    "AZURE_DNS_ZONE": "mojito.dev",
+    "AZURE_DNS_ZONE_RESOURCE_GROUP": "application-mojito-dev",
+    "AZURE_KEYVAULT_CERTIFICATE": "fake",
+    "AZURE_GARDEN_RESOURCE_GROUP": "application-mojito-dev",
+    "GARDEN_NAME": "dev-garden",
+    "DB_CONNECTION_STRING": "fake",
+    "EVENTHUB_DD_API_KEY": "fake",
+    "EVENTHUB_ROOT_MANAGE_SHARED_ACCESS_KEY": "fake",
+    "EVENTHUB_TRIGGER_NAME": "fake",
+    "WEBSITE_TIME_ZONE": "Asia/Tokyo",
+    "BASE_CALLBACK_URL": "http://localhost:7000",
+    "WEB_HOST": "http://localhost:3000",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AzureWebJobsStorage": "fake",
+    "AzureWebJobs.runTasks.Disabled": 1,
+    "AzureWebJobs.checkTasks.Disabled": 1,
+    "AzureWebJobs.eventHubToDatadog.Disabled": 1,
+    "AZURE_DB_RESOURCE_GROUP": "",
+    "AZURE_STORAGE_RESOURCE_GROUP": "",
+    "AUDIT_LOG_STORAGE_ACCOUNT_NAME": "",
+    "AUDIT_LOG_STORAGE_ACCOUNT_KEY": "",
+    "AUDIT_LOG_STORAGE_CONTAINER_NAME": ""
+  },
+  "Host": {
+    "CORS": "*"
+  }
+}

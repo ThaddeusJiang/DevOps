@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "//FIXME: schedule, the WEBSITE_TIME_ZONE=Asia/Tokyo should work!!!": "0 0 0 * * *",
+      "schedule": "0 0 15 * * *"
+    }
+  ],
+  "scriptFile": "../dist/scheduleTasks/index.js"
+}
