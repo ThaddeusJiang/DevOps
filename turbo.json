@@ -1,9 +1,15 @@
 {
-  "$schema": "https://turborepo.org/schema.json",
+  "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**"],
+      "env": ["SOME_ENV_VAR"]
+    },
+    "web#build": {
+      "dependsOn": ["^build"],
+      "env": ["SOME_OTHER_ENV_VAR"],
+      "outputs": [".next/**"]
     },
     "test": {
       "dependsOn": ["build"],
@@ -33,5 +39,5 @@
     }
   },
   "globalEnv": ["GITHUB_TOKEN"],
-  "globalDependencies": []
+  "globalDependencies": ["tsconfig.json"]
 }
