@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 
-import { SessionProvider as Provider, getSession, signIn, useSession } from "next-auth/react";
+// import { SessionProvider as Provider, getSession, signIn, useSession } from "next-auth/react";
 import type { AppProps } from "next/app";
 
 import axios from "axios";
@@ -27,14 +27,6 @@ if (process.env.NEXT_PUBLIC_API_MOCKING === "yes") {
 }
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
-axios.interceptors.request.use(async (request) => {
-  const session = await getSession();
-
-  if (session) {
-    request.headers.Authorization = `Bearer ${session?.user?.accessToken}`;
-  }
-  return request;
-});
 
 const queryClient = new QueryClient();
 
@@ -51,30 +43,30 @@ const handleExitComplete = (): void => {
   }
 };
 
-function Auth({ children }) {
-  const { data: session, status } = useSession();
-  const loading = status === "loading";
-  const isUser = !!session?.user;
+// function Auth({ children }) {
+//   const { data: session, status } = useSession();
+//   const loading = status === "loading";
+//   const isUser = !!session?.user;
 
-  useEffect(() => {
-    if (session?.error === "RefreshAccessTokenError") {
-      signIn();
-    }
-  }, [session]);
+//   useEffect(() => {
+//     if (session?.error === "RefreshAccessTokenError") {
+//       signIn();
+//     }
+//   }, [session]);
 
-  useEffect(() => {
-    if (loading) return; // Do nothing while loading
-    if (!isUser) signIn(); // If not authenticated, force log in
-  }, [isUser, loading]);
+//   useEffect(() => {
+//     if (loading) return; // Do nothing while loading
+//     if (!isUser) signIn(); // If not authenticated, force log in
+//   }, [isUser, loading]);
 
-  if (isUser) {
-    return children;
-  }
+//   if (isUser) {
+//     return children;
+//   }
 
-  // Session is being fetched, or no user.
-  // If no user, useEffect() will redirect.
-  return <ScreenLoading />;
-}
+//   // Session is being fetched, or no user.
+//   // If no user, useEffect() will redirect.
+//   return <ScreenLoading />;
+// }
 
 const App: FC<AppProps> = (props) => {
   const { Component, pageProps } = props;
@@ -83,13 +75,13 @@ const App: FC<AppProps> = (props) => {
     <QueryClientProvider client={queryClient}>
       <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
         <Toaster key="toaster" position="top-right" />
-        <Provider key="provider" session={pageProps.session}>
-          <Auth>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </Auth>
-        </Provider>
+        {/* <Provider key="provider" session={pageProps.session}> */}
+        {/* <Auth> */}
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        {/* </Auth> */}
+        {/* </Provider> */}
       </AnimatePresence>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

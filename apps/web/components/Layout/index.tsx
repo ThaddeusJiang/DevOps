@@ -31,7 +31,7 @@ type Props = {
 
 const Layout: FC<Props> = (props) => {
   const { children } = props;
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
   const router = useRouter();
 
@@ -78,7 +78,7 @@ const Layout: FC<Props> = (props) => {
                               src="https://www.gravatar.com/avatar/ANY"
                               // FIXME: Azure AD profilephoto is not working, https://docs.microsoft.com/en-us/graph/api/profilephoto-get?view=graph-rest-1.0#/examples
                               // src={session.user.image ?? "https://www.gravatar.com/avatar/ANY"}
-                              alt={session.user.name}
+                              // alt={session.user.name}
                             />
                           </Menu.Button>
                         </div>
@@ -93,20 +93,20 @@ const Layout: FC<Props> = (props) => {
                             static
                             className="origin-top-right z-40 absolute -right-2 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                           >
-                            {/* <Menu.Item>
-                                {({ active }) => (
-                                  <Link href="/profile">
-                                    <a
-                                      className={classNames(
-                                        active ? "bg-gray-100" : "",
-                                        "block px-4 py-2 text-sm text-gray-700"
-                                      )}
-                                    >
-                                      Your Profile
-                                    </a>
-                                  </Link>
-                                )}
-                              </Menu.Item> */}
+                            <Menu.Item>
+                              {({ active }) => (
+                                <a
+                                  className={classNames(
+                                    active ? "bg-gray-100" : "",
+                                    "block px-4 py-2 text-sm text-gray-700"
+                                  )}
+                                  href="https://twitter.com/ThaddeusJiang"
+                                  target="_blank"
+                                >
+                                  Author
+                                </a>
+                              )}
+                            </Menu.Item>
                             {/* <Menu.Item>
                                 {({ active }) => (
                                   <Link href="/settings">
@@ -121,7 +121,7 @@ const Layout: FC<Props> = (props) => {
                                   </Link>
                                 )}
                               </Menu.Item> */}
-                            <Menu.Item>
+                            {/* <Menu.Item>
                               {({ active }) => (
                                 <div
                                   role="button"
@@ -131,14 +131,14 @@ const Layout: FC<Props> = (props) => {
                                   )}
                                   onClick={(e) => {
                                     e.preventDefault();
-                                    signOut();
+                                    // signOut();
                                   }}
                                   aria-hidden="true"
                                 >
                                   Sign out
                                 </div>
                               )}
-                            </Menu.Item>
+                            </Menu.Item> */}
                           </Menu.Items>
                         </Transition>
                       </>
@@ -290,16 +290,16 @@ const Layout: FC<Props> = (props) => {
                               src="https://www.gravatar.com/avatar/ANY"
                               // FIXME: Azure AD profilephoto is not working, https://docs.microsoft.com/en-us/graph/api/profilephoto-get?view=graph-rest-1.0#/examples
                               // src={session.user.image ?? "https://www.gravatar.com/avatar/ANY"}
-                              alt={session.user.name}
+                              // alt={session.user.name}
                             />
                           </div>
                           <div className="ml-3 min-w-0 flex-1">
-                            <div className="text-base font-medium text-gray-800 truncate">
+                            {/* <div className="text-base font-medium text-gray-800 truncate">
                               {session.user.name}
                             </div>
                             <div className="text-sm font-medium text-gray-500 truncate">
                               {session.user.email}
-                            </div>
+                            </div> */}
                           </div>
                           {/* <button className="ml-auto flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                               <span className="sr-only">
@@ -329,7 +329,7 @@ const Layout: FC<Props> = (props) => {
                             className="block rounded-md px-3 py-2 text-base text-gray-900 font-medium hover:bg-gray-100 hover:text-gray-800"
                             onClick={(e) => {
                               e.preventDefault();
-                              signOut();
+                              // signOut();
                             }}
                             aria-hidden="true"
                           >
