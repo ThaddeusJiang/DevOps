@@ -37,7 +37,7 @@
     "lodash": "^4.17.21",
     "loglevel": "1.8.0",
     "next": "12",
-    "next-auth": "^4.10.3",
+    "next-auth": "^4.17.0",
     "next-secure-headers": "2.2.0",
     "node-cosmos": "^0.0.20",
     "playwright-test": "^7.2.2",

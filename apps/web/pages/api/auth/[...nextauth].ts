@@ -1,21 +1,20 @@
 import NextAuth from "next-auth";
-import AzureADProvider from "next-auth/providers/azure-ad";
+// import AzureADProvider from "next-auth/providers/azure-ad";
+import GithubProvider from "next-auth/providers/github";
 
-export default NextAuth({
-  secret: process.env.NEXTAUTH_SECRET,
+export const authOptions = {
+  // Configure one or more authentication providers
   providers: [
-    // Providers.Email({
-    //   server: process.env.EMAIL_SERVER,
-    //   from: process.env.EMAIL_FROM,
-    // }),
-    // Providers.GitHub({
-    //   clientId: process.env.GITHUB_CLIENT_ID,
-    //   clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    // }),
-    AzureADProvider({
-      clientId: process.env.AZURE_CLIENT_ID,
-      clientSecret: process.env.AZURE_CLIENT_SECRET,
-      tenantId: process.env.AZURE_TENANT_ID,
+    GithubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
+    // AzureADProvider({
+    //   clientId: process.env.AZURE_CLIENT_ID,
+    //   clientSecret: process.env.AZURE_CLIENT_SECRET,
+    //   tenantId: process.env.AZURE_TENANT_ID,
+    // }),
   ],
-});
+};
+
+export default NextAuth(authOptions);
