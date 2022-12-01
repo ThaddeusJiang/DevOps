@@ -118,7 +118,7 @@ TODO:
 
 ## Others Doc
 
-https://git.nisshin-dev.work/mojito/documents
+https://git.mdev.work/mojito/documents
 
 ## Spec
 

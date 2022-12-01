@@ -398,7 +398,7 @@ export const MockTaskDefinitions = [
     "cronExpression": "0 15 1 * * *",
     "httpRequest": {
       "body": {
-        "api": "jp.co.nisshinsci.saas.framework.service.OrgCacheService",
+        "api": "mojito.service.OrgCacheService",
         "method": "runTask",
         "params": "",
       },
@@ -500,7 +500,7 @@ export const MockTaskDefinitions = [
     "cronExpression": "0 0 1 * * *",
     "httpRequest": {
       "body": {
-        "api": "jp.co.nisshinsci.saas.framework.service.tags.Member4SearchService",
+        "api": "mojito.service.tags.Member4SearchService",
         "method": "runTask",
         "params": "",
       },

@@ -240,7 +240,7 @@ describe(Partitions.Tasks, () => {
     const task = generateBaseTask(taskDefinition, "test.com");
 
     expect(task.httpRequest.body).toEqual({
-      api: "jp.co.nisshinsci.saas.framework.service.tags.Member4SearchService",
+      api: "mojito.service.tags.Member4SearchService",
       method: "runTask",
       params: "{}",
     });

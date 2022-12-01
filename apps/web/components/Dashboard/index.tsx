@@ -26,12 +26,12 @@ const links = [
   },
   {
     title: "Documents",
-    href: "https://git.nisshin-dev.work/mojito/documents",
+    href: "https://github.com/ThaddeusJiang/mojito-admin/wiki",
     preview: "",
   },
   {
     title: "Git Repositories",
-    href: "https://git.nisshin-dev.work/mojito/",
+    href: "https://github.com/ThaddeusJiang/mojito-admin/",
     preview: "",
   },
 ];
