@@ -1,3 +1,11 @@
-争议内容，从头再来。
+# tjdevopskit
 
-软件工程师的价值在于知识和经验的沉淀，而不是代码。
+Out-of-the-box DevOps kit for startups.
+
+> Support Microsoft Azure currently.
+
+## Features
+
+- Infrastructure as Code
+- Web Application
+- Pro Tips
