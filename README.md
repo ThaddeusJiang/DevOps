@@ -6,6 +6,5 @@ Out-of-the-box DevOps kit for startups.
 
 ## Features
 
-- Infrastructure as Code
-- Web Application
-- Pro Tips
+- [x] Create and manage Azure resources
+- [x] Easy to use CosmosDB
