@@ -6,5 +6,5 @@ Out-of-the-box DevOps kit for startups.
 
 ## Features
 
-- [x] Create and manage Azure resources
+- [x] Infrastructure as Code (IaC) with Terraform
 - [x] Easy to use CosmosDB

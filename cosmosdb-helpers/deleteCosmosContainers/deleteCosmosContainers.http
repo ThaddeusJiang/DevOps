@@ -3,6 +3,6 @@ POST http://localhost:7071/api/deleteCosmosContainers
 content-type: application/json
 
 {
-    "databaseId": "SmartCompany",
+    "databaseId": "Amami",
     "containers": ["Data_jiang-local-1", "Data_jiang-local-2"]
 }
