@@ -1,0 +1,10 @@
+
+NEXT_PUBLIC_AWS_COGNITO_REGION                  = ""
+NEXT_PUBLIC_AWS_COGNITO_USER_POOL_ID            = ""
+NEXT_PUBLIC_AWS_COGNITO_USER_POOL_WEB_CLIENT_ID = ""
+NEXT_PUBLIC_GRAPHQL_URI                         = ""
+NEXT_PUBLIC_SENTRY_DSN                          = ""
+NEXT_PUBLIC_SENTRY_ORG                          = ""
+NEXT_PUBLIC_SENTRY_PROJECT                      = ""
+basic_auth_credentials                          = ""
+access_token                                    = ""
