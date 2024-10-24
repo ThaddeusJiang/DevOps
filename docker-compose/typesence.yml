@@ -1,0 +1,18 @@
+services:
+  typesense:
+    image: typesense/typesense:27.1
+    restart: on-failure
+    # hostname: typesense
+    ports:
+      - "8080:8108"
+    volumes:
+      - ./data/typesense-data:/data
+    environment:
+      TYPESENSE_DATA_DIR: /data
+      TYPESENSE_API_KEY: xyz
+      TYPESENSE_ENABLE_CORS: "true"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
